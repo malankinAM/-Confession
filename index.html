@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+
+  
+</head>
+<body>
+     
+      <div class="player">
+            <audio id="audioPlayer" loop>
+                <source src="./Virtuoso%20of%20the%20Web.mp3">
+            </audio>
+           
+        </div>
+
+
+  
+      
+            <div class = "centered"> 
+                  
+              <div id = "heart2"></div> 
+              <div id = "heart"></div> 
+            </div>
+            <div class = "words"></div>
+          
+       <script src="app.js"></script>
+
+       <script>
+            $(document).ready(function() {
+                var audio = $('#audioPlayer')[0];
+                var playPauseBtn = $('#playPauseBtn');
+                var currentTimeSpan = $('#currentTime');
+                var durationSpan = $('#duration');
+    
+                var playPromise = audio.play();
+    
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        console.log('Авто-воспроизведение начато!');
+                    }).catch(function(error) {
+                        console.log('Авто-воспроизведение заблокировано:', error);
+                    });
+                }
+    
+                audio.onloadedmetadata = function() {
+                    durationSpan.text(formatTime(audio.duration));
+                };
+    
+                audio.ontimeupdate = function() {
+                    currentTimeSpan.text(formatTime(audio.currentTime));
+                };
+    
+                playPauseBtn.click(function() {
+                    if (audio.paused) {
+                        audio.play();
+                        playPauseBtn.text('Пауза');
+                    } else {
+                        audio.pause();
+                        playPauseBtn.text('Воспроизвести');
+                    }
+                });
+    
+                function formatTime(seconds) {
+                    var minutes = Math.floor(seconds / 60);
+                    var seconds = Math.floor(seconds % 60);
+                    if (seconds < 10) seconds = "0" + seconds;
+                    return minutes + ":" + seconds;
+                }
+            });
+        </script>
+</body>
+</html>

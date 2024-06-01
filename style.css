@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+      background-color: #000;
+      font-family: "Great Vibes", cursive;
+      font-weight: 600;
+      width: 100%;
+      height: 100%;
+      background-image: url('./l51BNeX.jpg');
+      animation: animateBackground 60s linear infinite;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @keyframes animateBackground {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
+    }
+
+
+
+    
+    p{
+      color: #e6eaec;
+      font-size:40px;
+      font-weight: 400;
+    }
+    
+    .words {  
+      position:absolute;
+      top:40%;
+      left:0;
+      right:0;
+      text-align: center;
+      font-size: 80px;
+      color: #cc050f;
+    }
+    
+    .centered {
+      position:absolute;
+      width:90vw;
+      height:10vw;
+    }
+    
+    #heart {
+        position: relative;
+        width: 90vw;
+        height: 40vw;
+    }
+    #heart:before,
+    #heart:after {
+        position: absolute;
+        content: "";
+        left: 50vw;
+        top: 5vw;
+        width: 25.15vw;
+        height: 37vw;
+        background: #D45F65;
+        -moz-border-radius: 200vw 200vw 0 0;
+        border-radius: 200vw 200vw 0 0;
+        -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+             -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 100%;
+           -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+             -o-transform-origin: 0 100%;
+                transform-origin: 0 100%;
+    }
+    #heart:after {
+        left:25vw;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
+           -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+             -o-transform-origin: 100% 100%;
+                transform-origin :100% 100%;
+    }
+    
+    #heart2 {
+        position: absolute;
+        width: 90vw;
+        height: 40vw;
+    }
+    #heart2:before,
+    #heart2:after {
+        position: absolute;
+        content: "";
+        left: 49vw;
+        top: 5vw;
+        width: 28.15vw;
+        height: 40vw;
+        background: #FEDEE0;
+        -moz-border-radius: 200vw 200vw 0 0;
+        border-radius: 200vw 200vw 0 0;
+        -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+             -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        -webkit-transform-origin: 0 100%;
+           -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+             -o-transform-origin: 0 100%;
+                transform-origin: 0 100%;
+    }
+    #heart2:after {
+        left:21vw;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
+           -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+             -o-transform-origin: 100% 100%;
+                transform-origin :100% 100%;
+    }
+
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.9);
+      }
+    }
+    
+    #heart,
+    #heart2 {
+      animation: pulse 1.5s infinite;
+    }
+
+
+    /* Медиа-запрос для мобильных устройств с шириной экрана до 470px */
+@media only screen and (max-width: 470px) {
+
+      body {
+            background-size: auto;}
+
+      .words {
+        font-size: 45px;
+        top: 30%;
+      }
+     
+      p{
+            font-size: 32px;
+            font-weight: 600;
+      }
+
+
+      #heart,
+      #heart2 {
+        width: 90vw;
+        height: 50vw;
+      }
+    
+      #heart:before,
+      #heart:after,
+      #heart2:before,
+      #heart2:after {
+        width: 28vw;
+        height: 40vw;
+        top: 8vw;
+      }
+    
+      #heart:after {
+        left: 22.5vw;
+      }
+    
+      #heart2:after {
+        left: 24.5vw;
+      }
+
+      #heart,
+  #heart2 {
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+      
+    }
