@@ -24,7 +24,7 @@ $("#heart").mouseenter(function(){
 
  setTimeout(function() {
       location.reload();
-     }, 13000);
+     }, 16000);
     
 
 
